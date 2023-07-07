@@ -1,18 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
-
-// const initialState = {
-//   items: [
-//     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-//     { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-//     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-//     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-//   ],
-// };
+// -Визначається початковий стан для форми контактів.
 const initialState = {
-  items: [],
-  isLoading: false,
-  error: null,
+  items: [], // - є масивом контактів
+  isLoading: false, // - показує, чи триває завантаження
+  error: null, // - вказує на наявність помилки.
 };
 const handlePending = state => {
   return {
@@ -50,18 +42,7 @@ const handleDeleteContactSuccess = (state, action) => {
     items: state.items.filter(item => item.id !== action.payload.id),
   };
 };
-// const contactsSlice = createSlice({
-//   name: 'contacts',
-//   initialState,
-//   reducers: {
-//     addContact: (state, action) => {
-//       state.items = [...state.items, action.payload];
-//     },
-//     deleteContact: (state, action) => {
-//       state.items = state.items.filter(item => item.id !== action.payload);
-//     },
-//   },
-// });
+
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
@@ -77,6 +58,26 @@ const contactsSlice = createSlice({
     [deleteContact.fulfilled]: handleDeleteContactSuccess,
   },
 });
-
-// export const { addContact, deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
+
+// const initialState = {
+//   items: [
+//     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+//     { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+//     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+//     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+//   ],
+// };
+// export const { addContact, deleteContact } = contactsSlice.actions;
+// const contactsSlice = createSlice({
+//   name: 'contacts',
+//   initialState,
+//   reducers: {
+//     addContact: (state, action) => {
+//       state.items = [...state.items, action.payload];
+//     },
+//     deleteContact: (state, action) => {
+//       state.items = state.items.filter(item => item.id !== action.payload);
+//     },
+//   },
+// });

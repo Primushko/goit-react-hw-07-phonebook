@@ -1,12 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'redux/filterSlice';
-// import { getFilter } from 'redux/selectors';
+import { setFilter } from 'redux/filterSlice'; // - встановлює фільтр для контактів.
+import { selectFilter } from 'redux/selectors'; // -вибирає поточне значення фільтра.
 import { Input, Label } from './Filter.styled';
-import { selectFilter } from 'redux/selectors';
-
+// - компонент Filter, який відповідає за фільтрацію контактів за ім'ям.
 export const Filter = () => {
   const dispatch = useDispatch();
-  // const filter = useSelector(getFilter);
   const filter = useSelector(selectFilter);
   return (
     <Label>
