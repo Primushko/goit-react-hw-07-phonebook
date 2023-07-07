@@ -6,14 +6,18 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
   justify-content: space-between;
-  margin-bottom: 8px;
+  // margin-bottom: 8px;
 `;
 
 export const Text = styled.p`
   display: inline-block;
   min-width: 230px;
-  font-size: 20px;
+  font-size: 17px;
 `;
 
 export const Button = styled.button`
@@ -23,7 +27,7 @@ export const Button = styled.button`
   background-color: transparent;
 
   border: 2px solid rgb(154, 141, 238);
-  border-radius: 50%;
+  border-radius: 6px;
 
   &:hover,
   &:focus {
@@ -42,7 +46,7 @@ const spin = keyframes`
 export const Spinner = styled.div`
   border: 4px solid rgba(0, 0, 0, 0.1);
   border-top-color: #333;
-  border-radius: 50%;
+  // border-radius: 50%;
   width: 24px;
   height: 24px;
   margin-bottom: 20px;
