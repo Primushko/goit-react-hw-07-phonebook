@@ -11,7 +11,6 @@ export const Item = styled.li`
   gap: 10px;
   font-size: 17px;
   justify-content: space-between;
-  // margin-bottom: 8px;
 `;
 
 export const Text = styled.p`
@@ -44,13 +43,12 @@ const spin = keyframes`
 `;
 
 export const Spinner = styled.div`
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top-color: #333;
-  // border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin-bottom: 20px;
-  margin-left: 70px;
-
-  animation: ${spin} 1s ease-in-out infinite;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: ${spin} 2s linear infinite;
 `;
